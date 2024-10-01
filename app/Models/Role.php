@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
+
+    /**
+     * Rolun mass assignable atributları.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = ['name']; 
+
+
+    public function users()
+    {
+        return $this->hasMany(User::class); 
+    }
 }
